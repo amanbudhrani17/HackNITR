@@ -95,6 +95,12 @@ public class ServiceImpl implements Service {
         String longitude = response.getLocation().getLongitude().toString();
         return new String[]{latitude,longitude};
     }
+
+    @Override
+    public void deleteById(long id) {
+        siteRepository.deleteById(id);
+    }
+
     public double distanceCalculator(String latitude1, String longitude1, String latitude2, String longitude2)
     {
 
@@ -125,6 +131,6 @@ public class ServiceImpl implements Service {
         double r = 6371;
 
         // calculate the result
-        return(c * r);
+        return(c * r)*1000;
     }
 }

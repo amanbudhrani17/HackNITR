@@ -14,4 +14,5 @@ public interface Service {
     public List<Site> refresh(String la,String lo);
     String getClientIp(HttpServletRequest request);
     public String[] getLocation(String ip) throws IOException, GeoIp2Exception;
+    public void deleteById(long id);
 }

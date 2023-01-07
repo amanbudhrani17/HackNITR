@@ -87,4 +87,9 @@ public class Controller {
         la=strings[0];
         lo=strings[1];
     }
+    @DeleteMapping("{id}")
+    public String deleteById(@PathVariable("id")long id){
+        service.deleteById(id);
+        return "deleted";
+    }
 }
